@@ -8,9 +8,27 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.uieffecttest.MainActivity" >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.example.uieffecttest.view.ElectricCurrentSVGView
+        android:id="@+id/flash_text"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="#000" />
+
+    <com.example.uieffecttest.view.WindProgressBar
+        android:id="@+id/wind_progress_bar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/flash_text"
+        android:layout_marginTop="20dp"
+        android:max="100" />
+
+    <SeekBar
+        android:id="@+id/seek"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_below="@id/wind_progress_bar"
+        android:layout_marginTop="20dp" />
 
 </RelativeLayout>

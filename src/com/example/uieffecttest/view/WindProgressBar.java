@@ -8,7 +8,7 @@ public class WindProgressBar extends ProgressBar {
 
   public WindProgressBar(Context context, AttributeSet attrs) {
     super(context, attrs);
-    // TODO Auto-generated constructor stub
+    this.setIndeterminate(false);
   }
 
 }

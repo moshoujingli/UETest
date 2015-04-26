@@ -1,16 +1,47 @@
 package com.example.uieffecttest;
 
+import com.example.uieffecttest.view.WindProgressBar;
+
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 
 public class MainActivity extends ActionBarActivity {
+
+  protected WindProgressBar mProgressBar;
+  protected SeekBar mSeekBar;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+    this.mProgressBar = (WindProgressBar)findViewById(R.id.wind_progress_bar);
+    this.mProgressBar.setProgress(0);;
+    this.mSeekBar = (SeekBar)findViewById(R.id.seek);
+    this.mSeekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+      
+      @Override
+      public void onStopTrackingTouch(SeekBar seekBar) {
+        Log.i("touch",""+seekBar.getProgress());
+        MainActivity.this.mProgressBar.setProgress(seekBar.getProgress());
+      }
+      
+      @Override
+      public void onStartTrackingTouch(SeekBar seekBar) {
+        // TODO Auto-generated method stub
+        
+      }
+      
+      @Override
+      public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        // TODO Auto-generated method stub
+        
+      }
+    });
   }
 
   @Override
